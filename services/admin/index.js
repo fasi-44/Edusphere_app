@@ -1,0 +1,14 @@
+export { default as dashboardService } from "./dashboardService";
+export { default as userService } from "./userService";
+export { default as classService } from "./classService";
+export { default as announcementService } from "./announcementService";
+export { default as feeService } from "./feeService";
+export { default as expenseService } from "./expenseService";
+export { default as subjectService } from "./subjectService";
+export { default as attendanceService } from "./attendanceService";
+export { default as timetableService } from "./timetableService";
+export { default as examService } from "./examService";
+export { default as marksService } from "./marksService";
+export { default as progressService } from "./progressService";
+export { default as syllabusService } from "./syllabusService";
+export { default as salaryService } from "./salaryService";
