@@ -15,7 +15,12 @@
     },
     "ios": {
       "supportsTablet": true,
-      "bundleIdentifier": "com.edusphere.app"
+      "bundleIdentifier": "com.edusphere.app",
+      "infoPlist": {
+        "NSLocationWhenInUseUsageDescription": "Allow EduSphere to access your location for bus tracking.",
+        "NSLocationAlwaysAndWhenInUseUsageDescription": "Allow EduSphere to share bus location with parents in the background.",
+        "UIBackgroundModes": ["location"]
+      }
     },
     "android": {
       "adaptiveIcon": {
@@ -23,7 +28,14 @@
         "backgroundColor": "#1a1a2e"
       },
       "edgeToEdgeEnabled": true,
-      "package": "com.edusphere.app"
+      "package": "com.edusphere.app",
+      "permissions": [
+        "ACCESS_FINE_LOCATION",
+        "ACCESS_COARSE_LOCATION",
+        "ACCESS_BACKGROUND_LOCATION",
+        "FOREGROUND_SERVICE",
+        "FOREGROUND_SERVICE_LOCATION"
+      ]
     },
     "web": {
       "favicon": "./assets/favicon.png",
@@ -32,7 +44,13 @@
     "plugins": [
       "expo-router",
       "expo-web-browser",
-      "expo-font"
+      "expo-font",
+      ["expo-location", {
+        "locationAlwaysAndWhenInUsePermission": "Allow EduSphere to share bus location with parents in the background.",
+        "isAndroidBackgroundLocationEnabled": true,
+        "isAndroidForegroundServiceEnabled": true
+      }],
+      "expo-camera"
     ],
     "experiments": {
       "typedRoutes": true

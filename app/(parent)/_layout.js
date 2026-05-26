@@ -59,6 +59,15 @@ export default function ParentLayout() {
                 }}
             />
             <Tabs.Screen
+                name="bus-location"
+                options={{
+                    title: "Bus",
+                    tabBarIcon: ({ color }) => (
+                        <Feather name="navigation" size={20} color={color} />
+                    ),
+                }}
+            />
+            <Tabs.Screen
                 name="timetable"
                 options={{
                     title: "Timetable",

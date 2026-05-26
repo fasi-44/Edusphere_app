@@ -42,7 +42,7 @@ function useStoreHydration() {
   return hydrated;
 }
 
-const ROLE_GROUPS = ["(teacher)", "(student)", "(parent)", "(admin)"];
+const ROLE_GROUPS = ["(teacher)", "(student)", "(parent)", "(admin)", "(bus-staff)"];
 
 function AuthGate() {
   const segments = useSegments();
