@@ -19,6 +19,7 @@ import {
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useAuthStore } from "../store";
 import { ROLE_ROUTES } from "../lib/constants";
+import AnimatedSplash from "../components/AnimatedSplash";
 
 if (Platform.OS !== "web") {
   SplashScreen.preventAutoHideAsync();
@@ -80,6 +81,7 @@ function AuthGate() {
 }
 
 export default function RootLayout() {
+  const [splashDone, setSplashDone] = useState(Platform.OS === "web");
   const [fontsLoaded, fontError] = useFonts({
     Lexend_100Thin,
     Lexend_200ExtraLight,
@@ -105,6 +107,7 @@ export default function RootLayout() {
   return (
     <SafeAreaProvider>
       <AuthGate />
+      {!splashDone && <AnimatedSplash onFinish={() => setSplashDone(true)} />}
       <StatusBar style="auto" />
     </SafeAreaProvider>
   );
